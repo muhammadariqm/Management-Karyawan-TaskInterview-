@@ -259,18 +259,6 @@ $employee->delete();
 
 ---
 
-## Screenshot
-
-- Login
-- Dashboard
-- Data Karyawan
-- Tambah Data
-- Detail Data
-- Edit Data
-- Hapus Data
-
----
-
 ## Author
 
 Muhammad Ariq Mubarak
