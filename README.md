@@ -233,10 +233,10 @@ resources/
  |     └── dashboard/
  |     |      └── index.blade.php
  |     └── employees
- |     |      └── index.balde.php
- |     |      └── create.balde.php
- |     |      └── edit.balde.php
- |     |      └── show.balde.php
+ |     |      └── index.blade.php
+ |     |      └── create.blade.php
+ |     |      └── edit.blade.php
+ |     |      └── show.blade.php
  |     └── layouts
  |     |      └── app.blade.php
 routes/
