@@ -7,7 +7,7 @@ Aplikasi Employee Management berbasis Laravel untuk mengelola data karyawan. Apl
 ## Teknologi
 
 - Laravel 12
-- PHP 8.2+
+- PHP 8.3.27
 - MySQL
 - Bootstrap 5
 - JavaScript (Fetch API)
@@ -274,7 +274,3 @@ $employee->delete();
 ## Author
 
 Muhammad Ariq Mubarak
-
-```
-
-```
