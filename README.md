@@ -55,6 +55,25 @@ Jika API tidak dapat diakses, aplikasi akan menampilkan pesan yang informatif ta
 
 ---
 
+## Public API
+
+Aplikasi ini menggunakan **API Wilayah Indonesia** dari Emsifa untuk mengambil data:
+
+- Provinsi
+- Kabupaten/Kota
+- Kecamatan
+- Desa/Kelurahan
+
+Dokumentasi API:
+
+- https://www.emsifa.com/api-wilayah-indonesia/ :contentReference[oaicite:0]{index=0}
+
+Source Code:
+
+- https://github.com/emsifa/api-wilayah-indonesia
+
+---
+
 ## Struktur Database
 
 ### users
