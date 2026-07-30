@@ -66,7 +66,7 @@ Aplikasi ini menggunakan **API Wilayah Indonesia** dari Emsifa untuk mengambil d
 
 Dokumentasi API:
 
-- https://www.emsifa.com/api-wilayah-indonesia/ :contentReference[oaicite:0]{index=0}
+- https://www.emsifa.com/api-wilayah-indonesia/
 
 Source Code:
 
