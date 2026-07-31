@@ -87,7 +87,7 @@
         <div class="card shadow-sm mt-4">
             <div class="card-body">
                 <h5> Statistik Jabatan </h5>
-                <canvas id="positionChart"></canvas>
+                <canvas id="positionChart" height="100"></canvas>
             </div>
         </div>
         <div class="card shadow-sm mt-4">

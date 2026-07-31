@@ -43,7 +43,7 @@
     <div class="card shadow-sm">
         <div class="table-responsive">
             <table class="table table-bordered table-hover mb-0">
-                <thead class="table-light text-center">
+                <thead class="text-center">
                     <tr>
                         <th>No</th>
                         <th>NIK</th>

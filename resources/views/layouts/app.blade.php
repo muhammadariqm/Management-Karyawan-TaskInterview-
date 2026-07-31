@@ -97,30 +97,41 @@
                 Employee Management
             </a>
 
-            <div class="ms-auto dropdown">
-                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                    data-bs-toggle="dropdown">
-                    <i class="bi bi-person-circle fs-4 me-2"></i>
-                    <span>{{ Auth::user()->name }}</span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li class="dropdown-item-text fw-bold">
-                        {{ Auth::user()->name }}
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li>
-                        <form action="{{ route('logout') }}" method="POST">
-                            @csrf
+            <div class="ms-auto d-flex align-items-center">
 
-                            <button class="dropdown-item">
-                                <i class="bi bi-box-arrow-right me-2"></i>
-                                Logout
-                            </button>
-                        </form>
-                    </li>
-                </ul>
+                <!-- Dark Mode -->
+                <div class="form-check form-switch me-3">
+                    <input class="form-check-input" type="checkbox" id="themeToggle">
+                </div>
+
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                        data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle fs-4 me-2"></i>
+                        <span>{{ Auth::user()->name }}</span>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li class="dropdown-item-text fw-bold">
+                            {{ Auth::user()->name }}
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button class="dropdown-item">
+                                    <i class="bi bi-box-arrow-right me-2"></i>
+                                    Logout
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </nav>
@@ -150,6 +161,30 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const btn = document.getElementById("themeToggle");
+
+        // load theme
+        if (localStorage.getItem("theme") == "dark") {
+            document.body.classList.add("dark-mode");
+            btn.innerHTML = '<i class="bi bi-sun-fill"></i>';
+        }
+
+        // toggle
+        btn.onclick = function() {
+
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+                btn.innerHTML = '<i class="bi bi-sun-fill"></i>';
+            } else {
+                localStorage.setItem("theme", "light");
+                btn.innerHTML = '<i class="bi bi-moon-stars-fill"></i>';
+            }
+
+        }
+    </script>
 
 </body>
 
