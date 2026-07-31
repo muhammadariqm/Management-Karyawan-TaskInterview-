@@ -1,0 +1,33 @@
+/* dashboard */
+
+body {
+    background: #f5f7fb;
+}
+
+.stat-card {
+    border: none;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+.card {
+    border-radius: 20px;
+}
+
+/* end dashboard */

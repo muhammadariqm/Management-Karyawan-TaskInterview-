@@ -43,7 +43,7 @@
     <div class="card shadow-sm">
         <div class="table-responsive">
             <table class="table table-bordered table-hover mb-0">
-                <thead class="table-light">
+                <thead class="table-light text-center">
                     <tr>
                         <th>No</th>
                         <th>NIK</th>
@@ -68,27 +68,28 @@
 
                             <td>{{ $employee->no_telepon }}</td>
 
-                            <td>
+                            <td class="text-nowrap">
+                                <div class="d-flex gap-1">
 
-                                <a href="{{ route('employees.show', $employee->id) }}" class="btn btn-info btn-sm">
-                                    Detail
-                                </a>
+                                    <a href="{{ route('employees.show', $employee->id) }}" class="btn btn-info btn-sm">
+                                        <i class="bi bi-eye-fill me-1"></i> Detail
+                                    </a>
 
-                                <a href="{{ route('employees.edit', $employee->id) }}" class="btn btn-warning btn-sm">
-                                    Edit
-                                </a>
+                                    <a href="{{ route('employees.edit', $employee->id) }}" class="btn btn-warning btn-sm">
+                                        <i class="bi bi-pencil-square me-1"></i> Edit
+                                    </a>
 
-                                <form action="{{ route('employees.destroy', $employee->id) }}" method="POST"
-                                    class="d-inline delete-form">
-                                    @csrf
-                                    @method('DELETE')
+                                    <form action="{{ route('employees.destroy', $employee->id) }}" method="POST"
+                                        class="delete-form">
+                                        @csrf
+                                        @method('DELETE')
 
-                                    <button type="submit" class="btn btn-danger btn-sm">
-                                        <i class="bi bi-trash"></i>
-                                        Hapus
-                                    </button>
+                                        <button type="submit" class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash-fill me-1"></i> Hapus
+                                        </button>
+                                    </form>
 
-                                </form>
+                                </div>
                             </td>
                         </tr>
 
