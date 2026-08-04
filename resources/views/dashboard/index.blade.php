@@ -75,19 +75,17 @@
         </div>
         <div class="card shadow-sm mt-4">
             <div class="card-body">
-                <h5 class="mb-3"> Quick Action </h5>
-                <a href="{{ route('employees.create') }}" class="btn btn-primary rounded-pill">
-                    <i class="bi bi-plus-circle"></i> Tambah Karyawan </a>
-                <a href="#" class="btn btn-success rounded-pill">
-                    <i class="bi bi-person-fill"></i> Kelola User </a>
-                <a href="#" class="btn btn-danger rounded-pill">
-                    <i class="bi bi-file-earmark-pdf"></i> Export PDF </a>
+                <h5> Statistik Jabatan </h5>
+                <canvas id="positionChart" height="100"></canvas>
             </div>
         </div>
         <div class="card shadow-sm mt-4">
             <div class="card-body">
-                <h5> Statistik Jabatan </h5>
-                <canvas id="positionChart" height="100"></canvas>
+                <h5 class="mb-3"> Quick Action </h5>
+                <a href="{{ route('employees.create') }}" class="btn btn-primary rounded-pill">
+                    <i class="bi bi-plus-circle"></i> Tambah Karyawan </a>
+                <a href="#" class="btn btn-danger rounded-pill">
+                    <i class="bi bi-file-earmark-pdf"></i> Export PDF </a>
             </div>
         </div>
         <div class="card shadow-sm mt-4">
@@ -125,31 +123,36 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
+        const labels = [
+            @foreach ($chart as $item)
+                "{{ $item->jabatan }}",
+            @endforeach
+        ];
+
+        const data = [
+            @foreach ($chart as $item)
+                {{ $item->total }},
+            @endforeach
+        ];
+
+        // Generate warna random
+        const colors = labels.map(() => {
+            const r = Math.floor(Math.random() * 206) + 50;
+            const g = Math.floor(Math.random() * 206) + 50;
+            const b = Math.floor(Math.random() * 206) + 50;
+            return `rgb(${r}, ${g}, ${b})`;
+        });
+
         const ctx = document.getElementById('positionChart');
 
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: [
-                    @foreach ($chart as $item)
-                        "{{ $item->jabatan }}",
-                    @endforeach
-                ],
+                labels: labels,
                 datasets: [{
                     label: 'Jumlah Karyawan',
-                    data: [
-                        @foreach ($chart as $item)
-                            {{ $item->total }},
-                        @endforeach
-                    ],
-                    backgroundColor: [
-                        '#2563eb',
-                        '#16a34a',
-                        '#f59e0b',
-                        '#ef4444',
-                        '#8b5cf6',
-                        '#06b6d4'
-                    ],
+                    data: data,
+                    backgroundColor: colors,
                     borderRadius: 10
                 }]
             },
