@@ -1,3 +1,25 @@
+## Login Page
+
+<p align="center">
+    <img src="assets/screenshots/login.png" width="900">
+</p>
+
+---
+
+## Dashboard
+
+<p align="center">
+    <img src="assets/screenshots/dashboard.png" width="900">
+</p>
+
+---
+
+## Employee List
+
+<p align="center">
+    <img src="assets/screenshots/dataKar.png" width="900">
+</p>
+
 # Employee Management
 
 Aplikasi Employee Management berbasis Laravel untuk mengelola data karyawan. Aplikasi ini menyediakan fitur autentikasi, dashboard, CRUD data karyawan, pencarian, pagination, serta integrasi dengan Public API Wilayah Indonesia.
